@@ -1,0 +1,27 @@
+::selection {
+  background: #a19a8f;
+}
+
+.team .item .social a:hover i {
+  color: #a19a8f;
+}
+
+#middle .middle .menu a:hover {
+  color: #a19a8f;
+}
+
+#countdown .s {
+  color: #a19a8f;
+}
+
+#contact-form div > div .btn-primary {
+  background: #a19a8f;
+}
+
+#subscribe-form > div button {
+  background: #a19a8f;
+}
+
+#social a:hover i {
+  color: #a19a8f;
+}

@@ -4,11 +4,8 @@
 /* Please check the help file to set correctly this file :) */
 /* ******************************************************** */
 
-// Set to "mailchimp" or "file"
-$STORE_MODE = "mailchimp";
-
 // MailChimp API Key findable in your Mailchimp's dashboard
-$API_KEY =  "eb75278fb68296c693fe5bd00aee7854-us13";
+$API_KEY =  "3fd584ff10bfeddecb3399c0fd3ad4f2-us13";
 
 // MailChimp List ID  findable in your Mailchimp's dashboard
 $LIST_ID =  "850e2b64d6";
@@ -20,7 +17,7 @@ $STORE_FILE = $_SERVER["DOCUMENT_ROOT"]."/subscription-list.txt";
 // Don't forget to check the path below
 /* ************************************ */
 
-require('MailChimp.php');
+include('MailChimp.php');
 
 /* ***************************************************** */
 // For the part below, no interventions are required
@@ -37,35 +34,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["email"])) {
 	// Checking if the email writing is good
 	if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-		// The part for the storage in a .txt
-		if ($STORE_MODE == "file") {
-
-			// SUCCESS SENDING
-			if(@file_put_contents($STORE_FILE, strtolower($email)."\r\n", FILE_APPEND)) {
-				echo json_encode(array(
-						"status" => "success"
-					));
-			// ERROR SENDING
-			} else {
-				echo json_encode(array(
-						"status" => "error",
-						"type" => "FileAccessError"
-					));
-			}
-
-		// The part for the storage in Mailchimp
-		} elseif ($STORE_MODE == "mailchimp") {
-
 			$MailChimp = new \Drewm\MailChimp($API_KEY);
 
 			$result = $MailChimp->call('lists/subscribe', array(
-		                'id'                => $LIST_ID,
-		                'email'             => array('email'=>$email),
-		                'double_optin'      => false,
-		                'update_existing'   => true,
-		                'replace_interests' => false,
-		                'send_welcome'      => true,
-		            ));
+	          'id'                => $LIST_ID,
+	          'email'             => array('email'=>$email),
+	          'double_optin'      => false,
+	          'update_existing'   => true,
+	          'replace_interests' => false,
+	          'send_welcome'      => true,
+	      ));
 
 			// SUCCESS SENDING
 			if($result["email"] == $email) {
@@ -79,12 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["email"])) {
 						"type" => $result["name"]
 					));
 			}
-		// ERROR
-		} else {
-			echo json_encode(array(
-					"status" => "error",
-				));
-		}
+
 	// ERROR DURING THE VALIDATION
 	} else {
 		echo json_encode(array(

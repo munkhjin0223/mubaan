@@ -1,1 +1,29 @@
 $default-color: #4982c3;
+
+::selection {
+  background: $default-color;
+}
+
+.team .item .social a:hover i {
+  color: $default-color;
+}
+
+#middle .middle .menu a:hover {
+  color: $default-color;
+}
+
+#countdown .s {
+  color: $default-color;
+}
+
+#contact-form div > div .btn-primary {
+  background: $default-color;
+}
+
+#subscribe-form > div button {
+  background: $default-color;
+}
+
+#social a:hover i {
+  color: $default-color;
+}

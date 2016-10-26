@@ -4,15 +4,15 @@ namespace Drewm;
 
 /**
  * Super-simple, minimum abstraction MailChimp API v2 wrapper
- * 
+ *
  * Uses curl if available, falls back to file_get_contents and HTTP stream.
  * This probably has more comments than code.
  *
  * Contributors:
  * Michael Minor <me@pixelbacon.com>
  * Lorna Jane Mitchell, github.com/lornajane
- * 
- * @author Drew McLellan <drew.mclellan@gmail.com> 
+ *
+ * @author Drew McLellan <drew.mclellan@gmail.com>
  * @version 1.1.1
  */
 class MailChimp
@@ -50,7 +50,7 @@ class MailChimp
      * @return array          Assoc array of decoded result
      */
     private function makeRequest($method, $args=array())
-    {      
+    {
         $args['apikey'] = $this->api_key;
 
         $url = $this->api_endpoint.'/'.$method.'.json';
@@ -59,7 +59,7 @@ class MailChimp
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');       
+            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_TIMEOUT, 10);
             curl_setopt($ch, CURLOPT_POST, true);
