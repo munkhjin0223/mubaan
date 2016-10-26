@@ -1,0 +1,41 @@
+$smartphone: 479px;
+$tablet: 767px;
+$smalldevice: 992px;
+$largedevice: 1200px;
+@mixin respondTo($media) {
+  @if $media == smartPhoneDown {
+    @media (max-width: $smartphone) { @content; }
+  }
+  @if $media == smartPhoneUp {
+    @media (min-width: $smartphone) { @content; }
+  }
+  @else if $media == tabletDown {
+    @media (max-width: $tablet) { @content; }
+  }
+	@else if $media == tabletUp {
+    @media (min-width: $tablet) { @content; }
+  }
+	@else if $media == smallDeviceDown {
+    @media (max-width: $smalldevice) { @content; }
+  }
+	@else if $media == smallDeviceUp {
+    @media (min-width: $smalldevice) { @content; }
+  }
+  @else if $media == largeDeviceDown {
+    @media (max-width: $largedevice) { @content; }
+  }
+  @else if $media == largeDeviceUp {
+    @media (min-width: $largedevice) { @content; }
+  }
+}
+
+$largedeviceheight: 750px;
+$smalldeviceheight: 540px;
+@mixin respondToHeight($media){
+  @if $media == largeDeviceHeightUp {
+    @media (min-height: $largedeviceheight) { @content; }
+  }
+  @else if $media == smallDeviceHeightUp {
+    @media (min-height: $smalldeviceheight) { @content; }
+  }
+}

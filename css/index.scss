@@ -1,0 +1,563 @@
+@import "bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "animate/animate.scss";
+@import "../js/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../fonts/font-awesome/scss/font-awesome.scss";
+@import "jquery.mCustomScrollbar.scss";
+@import "mixin/_mixin.scss";
+@import "jquery.fancybox.scss";
+@import "colors/green.scss";
+@import "vegas.scss";
+
+/**
+ * Variables
+ * -----------------------------------------------------------------------------
+ */
+$black-color: rgba(0,0,0,.8);
+$black-color-bg: #1f1f1f;
+
+/**
+ * Core
+ * -----------------------------------------------------------------------------
+ */
+body {
+  font-family: 'Roboto Condensed', Times new roman , serif;
+  background-color: $black-color-bg;
+  color: #fff;
+}
+
+:focus {
+  outline: none;
+}
+
+::selection {
+  background: $default-color;
+  color: #fff;
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: 200px;
+  background: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+.pace .pace-progress {
+  @include box-sizing(border-box);
+  @include transform(translate3d(0, 0, 0));
+  max-width: 200px;
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  width: 100%;
+  background: $black-color-bg;
+}
+.pace.pace-inactive {
+  display: none;
+}
+
+.alert-success {
+  margin-top: 20px;
+}
+
+/**
+ * Repeatable Patterns
+ * -----------------------------------------------------------------------------
+ */
+a {
+  @include transition(.3s);
+  &:hover,
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+.inline-block {
+  display: inline-block;
+}
+.close {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  opacity: 1;
+  i {
+    color: #fff;
+    font-size: 30px;
+  }
+}
+.pos-absolute {
+  position: absolute!important;
+}
+.nmhide {
+  opacity: 0;
+  @include transition(1.5s);
+  @include transform(translate(-100%));
+}
+.nmshow {
+  opacity: 1;
+  @include transition(1.5s);
+  @include transform(translate(0px));
+}
+.fancybox {
+  display: block;
+  position: relative;
+  .hover {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    @include transition(all 0.4s ease-in-out);
+    span {
+      position: absolute;
+      top: calc(50% - 11px);
+      text-align: center;
+      i {
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+  }
+  &:hover .hover {
+    opacity: 1;
+  }
+}
+.layout {
+  position: relative;
+  // overflow-x: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+/**
+ * Sidebar
+ * -----------------------------------------------------------------------------
+ */
+#left-sidebar,
+#right-sidebar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 50%;
+  padding: 10% 50px 100px;
+  h2 {
+    margin: 100px 0 40px;
+    font-size: 40px;
+  }
+  .sidebar {
+    // overflow: auto;
+  }
+}
+/**
+ * Left sidebar
+ * -----------------------------------------------------------------------------
+ */
+#left-sidebar {
+  left: 0;
+  .text {
+    line-height: 2;
+    font-size: 15px;
+  }
+  .team {
+    .item {
+      h3 {
+        margin: 15px 0 0;
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+      h4 {
+        margin: 10px 0;
+        font-size: 13px;
+      }
+      p {
+        margin: 15px 0;
+      }
+      .social {
+        margin-bottom: 10px;
+        a {
+          padding: 0 5px;
+          i {
+            color: #fff;
+          }
+          &:hover i {
+            color: $default-color;
+          }
+        }
+      }
+    }
+  }
+  .portfolio {
+    .fancybox {
+      margin-top: 40px;
+    }
+  }
+  .services {
+    > div > div {
+      padding: 30px 0;
+      .item {
+        padding: 0 20px;
+        i {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+/**
+ * Right sidebar
+ * -----------------------------------------------------------------------------
+ */
+#right-sidebar {
+  left: 50%;
+  h2 {
+    margin-bottom: 20px;
+  }
+  #contact-form {
+    div > div {
+      position: relative;
+      button,
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid #fff;
+        color: #fff;
+        background: none;
+        margin-top: 20px;
+        padding: 5px 10px;
+      }
+      input {
+        height: 35px;
+      }
+      label {
+        float: left;
+        font-size: 13px;
+        margin: 9px 0 0 13px;
+      }
+      textarea {
+        height: 100px;
+      }
+      button {
+        background: $default-color;
+        padding: 10px;
+        font-size: 15px;
+      }
+    }
+  }
+  p {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  .title {
+    position: relative;
+    i {
+      padding-right: 5px;
+      font-size: 15px;
+    }
+  }
+  .title:after,
+  .title:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: 0;
+  }
+  .title:after {
+    left: -60px;
+  }
+  .title:before {
+    right: -60px;
+  }
+}
+#right-sidebar.nmhide {
+  @include transform(translate(100%));
+}
+/**
+ * Middle
+ * -----------------------------------------------------------------------------
+ */
+#middle {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  @include transition(1.5s);
+  opacity: 0;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+  }
+  .bg.youtube {
+    overflow: hidden;
+    .in {
+      position: absolute;
+      z-index: -1;
+      iframe {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  .bg#single {
+    background: url("../images/single-bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $black-color none repeat scroll 0 0;
+  }
+  .middle {
+    @include transition(left,1.5s);
+    position: absolute;
+    z-index: 0;
+    left: 25%;
+    width: 50%;
+    padding-top: 50px;
+    text-align: center;
+    .logo {
+      display: inline-block;
+    }
+    h1 {
+      margin: 50px 0 10px;
+      font-size: 54px;
+      font-weight: 400;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    #countdown {
+      margin-top: 50px;
+      padding: 5px 0;
+      font-size: 34px;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      font-family: "Oswald";
+      span {
+        padding: 0 22px;
+        line-height: 40px;
+        border-right: 1px solid #fff;
+        &:first-child {
+          border-left: 1px solid #fff;
+        }
+      }
+      .s {
+        color: $default-color;
+      }
+    }
+    >p {
+      margin: 0 0 60px;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    #subscribe-form {
+      margin-top: 60px;
+      > div {
+        position: relative;
+        input {
+          float: left;
+          width: 280px;
+          height: 40px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border: 1px solid #fff;
+          background: none;
+          margin: 0;
+          padding: 0 10px;
+          font-size: 17px;
+        }
+        button {
+          float: left;
+          width: 130px;
+          height: 40px;
+          font-size: 17px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border: 1px solid #fff;
+          border-left: 0;
+          background: $default-color;
+        }
+        label {
+          position: absolute;
+          left: 10px;
+          top: 50px;
+        }
+        i {
+          display: none;
+        }
+      }
+      .message {
+        margin-top: 10px;
+      }
+    }
+    .menu {
+      margin-top: 10px;
+      display: inline-block;
+      a {
+        float: left;
+        margin: 0 15px;
+        color: #fff;
+        line-height: 40px;
+        font-size: 17px;
+        &:hover {
+          color: $default-color;
+        }
+      }
+    }
+  }
+  .social {
+    @include transition(left,1.5s);
+    position: absolute;
+    left: 25%;
+    bottom: 20px;
+    z-index: 0;
+    width: 50%;
+    padding-top: 0;
+    text-align: center;
+    a {
+      padding: 0 10px;
+      i {
+        font-size: 20px;
+        color: #fff;
+      }
+      &:hover i {
+        color: $default-color;
+      }
+    }
+  }
+}
+#middle.l,
+#middle.r {
+  .middle {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+#middle.r {
+  @include transform(translate(50%));
+  .middle,
+  .social {
+    left: 0;
+  }
+}
+#middle.l {
+  @include transform(translate(-50%));
+  .middle,
+  .social {
+    left: 50%;
+  }
+}
+/**
+ * Responsive
+ * -----------------------------------------------------------------------------
+ */
+ @include respondTo(smartPhoneDown) {
+   #left-sidebar .team>div>div {
+     width: 100%;
+   }
+   #middle .middle #subscribe-form>div input {
+     width: 180px;
+   }
+   #middle .middle #subscribe-form>div button {
+     width: 100px;
+   }
+   #middle .middle h1 {
+     font-size: 38px;
+   }
+   #middle .middle #countdown,
+   #middle .middle #subscribe-form {
+     margin-top: 30px;
+   }
+ }
+@include respondTo(tabletDown) {
+  #left-sidebar, #right-sidebar {
+    width: 100%;
+  }
+  #right-sidebar {
+    left: 0;
+  }
+  #middle .middle, #middle .social {
+    left: 5%;
+    width: 90%;
+  }
+  #middle.r {
+    @include transform(translate(100%));
+  }
+  #middle.l {
+    @include transform(translate(-100%));
+    .middle,
+    .social {
+      left: 0;
+    }
+  }
+}
+@include respondTo(largeDeviceUp) {
+  #left-sidebar .services > div > div {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    &:nth-child(3n) {
+      border-right: 0;
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-top: 0;
+    }
+  }
+}
+@include respondToHeight(smallDeviceHeightUp) {
+  body {
+    #middle {
+      position: fixed;
+    }
+  }
+}
+@include respondToHeight(largeDeviceHeightUp) {
+  #middle .middle,
+  #middle .social {
+    padding-top: 10%;
+  }
+  #middle .social {
+    bottom: 50px;
+  }
+  #middle .middle .menu,
+  #middle .social .menu {
+    margin-top: 50px;
+  }
+}
