@@ -22604,6 +22604,10 @@ a:hover, a:link, a:visited {
   text-decoration: none;
 }
 
+p {
+  font-weight: 300;
+}
+
 :focus {
   outline: none;
 }
@@ -23029,7 +23033,6 @@ a:hover, a:link, a:visited {
 #middle .middle > p {
   margin: 0 0 60px;
   font-size: 17px;
-  font-weight: 300;
   line-height: 1.5;
 }
 
@@ -23099,13 +23102,6 @@ a:hover, a:link, a:visited {
 
 #countdown span:first-child {
   border-left: 1px solid #fff;
-}
-
-> p {
-  margin: 0 0 60px;
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.5;
 }
 
 /**
