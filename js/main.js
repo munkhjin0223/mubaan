@@ -169,7 +169,7 @@ function onPlayerReady(event) {
     width = 992;
     height = 558;
   }
-  $("#player").css({"width": width+"px","height": height+"px","top": -top + "px",})
+  $("#player").parent().css({"margin-top": -top + "px"});
   player.playVideo();
   player.mute();
 }
