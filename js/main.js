@@ -42,7 +42,7 @@ $(function() {
  */
 
 //set sidebar height
-function init(){
+function setHeight(){
   var wheight = $(window).height();
   var height = wheight - wheight/5;
   if(wheight>450){
@@ -61,11 +61,11 @@ function init(){
 }
 
 $(window).resize(function(){
-  init();
+  setHeight();
 });
 
 $(window).load(function(){
-  init();
+  setHeight();
   // Plugin for the scrolling
   $(".sidebar").mCustomScrollbar();
 });
