@@ -116,8 +116,8 @@ function loadPlayer() {
 var player;
 
 // set your youtube video id. https://www.youtube.com/watch?v=SHwTTW_6_eU
-function getArtistId() {
-  return 'SHwTTW_6_eU';
+function getVideoId() {
+  return 'xxxxxxxxx';
 }
 
 // youtube player plugin
@@ -126,7 +126,7 @@ function onYouTubePlayer() {
   player = new YT.Player('player', {
     height: width/1.7,
     width: width,
-    videoId: getArtistId(),
+    videoId: getVideoId(),
     playerVars: {
       autoplay: 0,
       controls: 0,

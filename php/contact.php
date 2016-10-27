@@ -1,6 +1,6 @@
 <?php
 
-    $to = "munkhjin0223@gmail.com"; // ENTER YOUR E-MAIL ADDRESS
+    $to = "myemail@mail.com"; // ENTER YOUR E-MAIL ADDRESS
     $from = $_REQUEST['email'];
     $headers = "From: $from";
     $subject = $_REQUEST['subject'];
