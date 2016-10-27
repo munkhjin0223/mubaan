@@ -79,13 +79,13 @@ $(function() {
   // Plugin for the slider background
   $('#slider').vegas({
     slides: [{
-      src: '../images/slider/img1.jpg'
+      src: '../images/1920x1280.png'
     }, {
-      src: '../images/slider/img2.jpg'
+      src: '../images/1920x1280.png'
     }, {
-      src: '../images/slider/img3.jpg'
+      src: '../images/1920x1280.png'
     }, {
-      src: '../images/slider/img4.jpg'
+      src: '../images/1920x1280.png'
     }]
   });
 });
@@ -116,7 +116,7 @@ function loadPlayer() {
 var player;
 
 // set your youtube video id. https://www.youtube.com/watch?v=SHwTTW_6_eU
-function getArtistId() {
+function getVideoId() {
   return 'SHwTTW_6_eU';
 }
 
@@ -126,7 +126,7 @@ function onYouTubePlayer() {
   player = new YT.Player('player', {
     height: width/1.7,
     width: width,
-    videoId: getArtistId(),
+    videoId: getVideoId(),
     playerVars: {
       autoplay: 0,
       controls: 0,
@@ -169,7 +169,7 @@ function onPlayerReady(event) {
     width = 992;
     height = 558;
   }
-  $("#player").css({"width": width+"px","height": height+"px","top": -top + "px",})
+  $("#player").parent().css({"margin-top": -top + "px"});
   player.playVideo();
   player.mute();
 }
