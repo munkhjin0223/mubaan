@@ -79,13 +79,13 @@ $(function() {
   // Plugin for the slider background
   $('#slider').vegas({
     slides: [{
-      src: '../images/slider/img1.jpg'
+      src: '../images/1920x1280.png'
     }, {
-      src: '../images/slider/img2.jpg'
+      src: '../images/1920x1280.png'
     }, {
-      src: '../images/slider/img3.jpg'
+      src: '../images/1920x1280.png'
     }, {
-      src: '../images/slider/img4.jpg'
+      src: '../images/1920x1280.png'
     }]
   });
 });
