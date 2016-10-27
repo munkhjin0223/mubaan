@@ -140,7 +140,7 @@ a {
 .close {
   position: absolute;
   top: 70px;
-  right: 70px;
+  right: 50px;
   opacity: 1;
   z-index: 1;
   i {
@@ -189,7 +189,7 @@ a {
     span {
       position: absolute;
       top: calc(50% - 11px);
-      text-align: center;
+      left: calc(50% - 11px);
       i {
         color: #fff;
         font-size: 20px;

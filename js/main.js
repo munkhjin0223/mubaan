@@ -15,6 +15,7 @@
 	 6. Navigate sidebar
 	 7. Displaying images
 	 8. Newsletter
+   9. Placeholder
 
 ******************************************************* */
 
@@ -289,3 +290,10 @@ $(function(){
   // Plugin for the newsletter
   $("#subscribe-form").notifyMe();
 });
+
+/**
+ * 9. Place holder (for browser that doesn't support placeholder for input and textarea)
+ * -----------------------------------------------------------------------------
+ */
+
+$('input, textarea').placeholder();
