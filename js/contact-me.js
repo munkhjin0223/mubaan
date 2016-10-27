@@ -29,7 +29,7 @@ jQuery(document).ready(function () {
                 }, 6000);
 
             });
-            $('.requiretop').val('');
+            $('.requiretop,textarea').val('');
 
         }
         return false;
