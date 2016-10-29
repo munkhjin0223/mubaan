@@ -144,7 +144,7 @@ p {
 .close {
   position: absolute;
   top: 70px;
-  right: 50px;
+  right: 70px;
   opacity: 1;
   z-index: 1;
   i {
@@ -662,7 +662,18 @@ p {
      font-size: 23px;
    }
  }
-@include respondTo(tabletDown) {
+@include respondTo(spuANDsdd) {
+  #middle .middle h1 {
+    font-size: 45px;
+  }
+  #countdown span {
+    font-size: 30px;
+  }
+  #subscribe-form > div input {
+    width: 250px;
+  }
+}
+@include respondTo(largeDeviceDown) {
   #left-sidebar, #right-sidebar {
     width: 100%;
   }

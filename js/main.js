@@ -41,11 +41,12 @@ $(function() {
  * -----------------------------------------------------------------------------
  */
 
-//set sidebar height
+//set sidebar height and responsive
 function setHeight(){
   var wheight = $(window).height();
+  var width = $(window).width();
   var height = wheight - wheight/5;
-  if(wheight>450){
+  if(width>767){
     height = height - 100;
     if($("#middle>div").hasClass("middle-in")){
       $("#middle>div").css("height","auto");
@@ -55,7 +56,11 @@ function setHeight(){
   }else{
     $("#middle>div").css("height",wheight);
     $("#middle>div").addClass("middle-in");
-    $("#social").addClass("hide");
+    if(wheight<450) {
+      $("#social").addClass("hide");
+    }else {
+      $("#social").removeClass("hide");
+    }
   }
   $(".sidebar").css("height",height);
 }
