@@ -2,8 +2,12 @@
   background: #8fab30;
 }
 
-.team .item .social a:hover i {
-  color: #8fab30;
+.heading .sep {
+  background-color: #8fab30;
+}
+
+.team .item .social a:hover {
+  background-color: #8fab30;
 }
 
 #middle .middle .menu a:hover {
@@ -14,12 +18,14 @@
   color: #8fab30;
 }
 
-#contact-form div > div .btn-primary {
+#contact-form div > div .btn-primary,
+#subscribe-form > div button {
   background: #8fab30;
 }
 
-#subscribe-form > div button {
-  background: #8fab30;
+#contact-form div > div .btn-primary:hover,
+#subscribe-form > div button:hover {
+  background: rgba(143, 171, 48, 0.8);
 }
 
 #social a:hover i {

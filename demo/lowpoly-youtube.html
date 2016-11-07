@@ -21,6 +21,21 @@
   <!-- Standard iPhone Touch Icon-->
   <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/09f/fff">
 
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="../js/bootstrap/dist/css/bootstrap.css" />
+
+  <!-- Font awesome -->
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome/css/font-awesome.css" />
+
+  <!-- Sidebar scrolling -->
+  <link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css" />
+
+  <!-- Tool for displaying images -->
+  <link rel="stylesheet" type="text/css" href="../css/jquery.fancybox.css" />
+
+  <!-- Plugin for the slider background -->
+  <link rel="stylesheet" type="text/css" href="../css/vegas.css" />
+
   <!-- Color -->
   <link rel="stylesheet" type="text/css" href="../css/colors/green.css" />
 
@@ -38,24 +53,59 @@
   <script src="../js/modernizr.js"></script>
 </head>
 
-<body>
+<body class="youtube-background">
   <!-- Left sidebar -->
   <div id="left-sidebar" class="nmhide text-center">
     <!-- Close left sidebar -->
-    <div class="close">
-      <i class="fa fa-close"></i>
-    </div>
+    <div class="close"></div>
     <!-- end close left sidebar -->
     <!-- Sidebar content -->
-    <div class="sidebar">
-      <div class="container-fluid">
-        <h2 class="mt0">About us</h2>
-        <div class="text">
-          Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
-          tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+    <div class="container">
+      <div class="sidebar">
+        <div class="heading">
+          <h2 class="mt0">About us</h2>
+          <div class="sep"></div>
+        </div>
+        <div class="aboutus">
+          <div class="text">
+            Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
+            tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="item">
+                <i class="fa fa-users"></i>
+                <h3>Awesome team</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="item">
+                <i class="fa fa-paint-brush"></i>
+                <h3>Stunning design</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="item">
+                <i class="fa fa-code"></i>
+                <h3>Tested code</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Team -->
-        <h2>Our team</h2>
+        <div class="heading">
+          <h2>Our team</h2>
+          <div class="sep"></div>
+        </div>
         <div class="team">
           <div class="row">
             <div class="col-sm-4">
@@ -100,7 +150,7 @@
             </div>
             <div class="col-sm-4">
               <div class="item">
-                <a data-fancybox-group="team" class="fancybox" href="../images/team/man.png" title="Programmer">
+                <a data-fancybox-group="team" class="fancybox" href="../images/team/man.png" title="Max">
                   <img src="../images/team/man.png" alt="Man" />
                   <div class="hover">
                     <span><i class="fa fa-search"></i></span>
@@ -121,25 +171,11 @@
           </div>
         </div>
         <!-- end team -->
-        <!-- Our clients -->
-        <h2>Our clients</h2>
-        <div class="row">
-          <div class="col-sm-3 col-xs-6">
-            <img src="../images/client/client1.png" alt="Client 1" />
-          </div>
-          <div class="col-sm-3 col-xs-6">
-            <img src="../images/client/client2.png" alt="Client 2" />
-          </div>
-          <div class="col-sm-3 col-xs-6">
-            <img src="../images/client/client3.png" alt="Client 3" />
-          </div>
-          <div class="col-sm-3 col-xs-6">
-            <img src="../images/client/client4.png" alt="Client 4" />
-          </div>
-        </div>
-        <!-- End our client -->
         <!-- Portfolio -->
-        <h2>Portfolio</h2>
+        <div class="heading">
+          <h2>Portfolio</h2>
+          <div class="sep"></div>
+        </div>
         <div class="text">
           Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
           tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
@@ -147,36 +183,61 @@
         <div class="portfolio">
           <div class="row">
             <div class="col-sm-6">
-              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio1.jpg" title="Portfolio 1">
+              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio1.jpg" title="Interier design">
                 <img class="img-responsive" src="../images/portfolio/portfolio1.jpg" alt="Portfolio 1" />
                 <div class="hover">
                   <span><i class="fa fa-search"></i></span>
                 </div>
               </a>
+              <div class="caption">
+                <h3>Interier design</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem consequat ipsum.
+                </p>
+              </div>
             </div>
             <div class="col-sm-6">
-              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio2.jpg" title="Portfolio 2">
+              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio2.jpg" title="Interier design">
                 <img class="img-responsive" src="../images/portfolio/portfolio2.jpg" alt="Portfolio 2" />
                 <div class="hover">
                   <span><i class="fa fa-search"></i></span>
                 </div>
               </a>
+              <div class="caption">
+                <h3>Interier design</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem consequat ipsum.
+                </p>
+              </div>
             </div>
+            <div class="clearfix"></div>
             <div class="col-sm-6">
-              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio3.jpg" title="Portfolio 3">
+              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio3.jpg" title="Interier design">
                 <img class="img-responsive" src="../images/portfolio/portfolio3.jpg" alt="Portfolio 3" />
                 <div class="hover">
                   <span><i class="fa fa-search"></i></span>
                 </div>
               </a>
+              <div class="caption">
+                <h3>Interier design</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem consequat ipsum.
+                </p>
+              </div>
             </div>
             <div class="col-sm-6">
-              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio4.jpg" title="Portfolio 4">
+              <a data-fancybox-group="portfolio" class="fancybox" href="../images/portfolio/portfolio4.jpg" title="Interier design">
                 <img class="img-responsive" src="../images/portfolio/portfolio4.jpg" alt="Portfolio 4" />
                 <div class="hover">
                   <span><i class="fa fa-search"></i></span>
                 </div>
               </a>
+              <div class="caption">
+                <h3>Interier design</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem consequat ipsum.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -185,15 +246,12 @@
     </div>
     <!-- End sidebar content -->
   </div>
-  <!-- end left sidebar -->
   <!-- Middle section -->
   <div id="middle">
     <div>
       <!-- youtube background -->
-      <div id="youtube" class="bg">
-        <div class="in">
-          <div id="player"></div>
-        </div>
+      <div class="bg">
+        <a class="player" data-property="{videoURL:'SHwTTW_6_eU', containment:'.bg', autoPlay:true, mute:true, quality: 'small', startAt:0, showControls:false, opacity:1}"></a>
       </div>
       <!-- Image overlay -->
       <div class="overlay"></div>
@@ -201,11 +259,14 @@
         <!-- Logo -->
         <img src="../images/logo/logo-green.png" alt="Theme plus plus" class="logo" />
         <h1>Under construction</h1>
+        <h2>We are now working on our new website</h2>
         <p class="visible-lg-block">
           It has everything you want, to make a first impression. Thoughtful Content & Purposeful Elements that avoids theme clichés and addresses real world needs.
         </p>
         <!-- Countdown -->
-        <div id="countdown"></div>
+        <div class="countdown">
+          <div id="countdown"></div>
+        </div>
         <div class="text-center">
           <!-- Subscribe form -->
           <form id="subscribe-form" action="../php/subscribe.php" method="post">
@@ -239,66 +300,71 @@
   <!-- Right sidebar -->
   <div id="right-sidebar" class="nmhide text-center">
     <!-- Close right sidebar -->
-    <div class="close">
-      <i class="fa fa-close"></i>
-    </div>
+    <div class="close"></div>
     <!-- Close right sidebar -->
     <!-- Sidebar content -->
-    <div class="sidebar">
-      <div class="container-fluid">
-        <h2 class="mt0">Contact us</h2>
-        <!-- Contact form -->
-        <form id="contact-form" method="post" action="../php/contact.php">
-          <div class="row">
-            <div class="col-sm-6">
-              <input type="text" class="requiretop" name="name" placeholder="Name">
-            </div>
-            <div class="col-sm-6">
-              <input type="email" class="requiretop" name="email" placeholder="Email">
-            </div>
-            <div class="col-sm-12">
-              <input type="text" class="requiretop" name="subject" placeholder="Subject">
-            </div>
-            <div class="col-sm-12">
-              <textarea name="message" placeholder="Message"></textarea>
-            </div>
-            <div class="col-sm-12">
-              <button type="submit" name="button" class="btn btn-primary">Submit</button>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="sidebar">
+            <div class="heading">
+  <h2 class="mt0">Contact us</h2>
+  <div class="sep"></div>
+</div>
+            <!-- Contact form -->
+            <form id="contact-form" method="post" action="../php/contact.php">
+              <div class="row">
+                <div class="col-sm-6">
+                  <input type="text" class="requiretop" name="name" placeholder="Name">
+                </div>
+                <div class="col-sm-6">
+                  <input type="email" class="requiretop" name="email" placeholder="Email">
+                </div>
+                <div class="col-sm-12">
+                  <input type="text" class="requiretop" name="subject" placeholder="Subject">
+                </div>
+                <div class="col-sm-12">
+                  <textarea name="message" placeholder="Message"></textarea>
+                </div>
+                <div class="col-sm-12">
+                  <button type="submit" name="button" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+            <!-- End contact form -->
+            <!-- Contact information -->
+            <p>
+              <span class="title">
+                <i class="fa fa-map-marker"></i>
+                Address
+              </span>
+            </p>
+            <p>
+              Lorem ipsum dolor, Sit amet consectetur, Donec odio nisl convallis sed, Cursus non - 123456
+            </p>
+            <p>
+              <span class="title">
+                <i class="fa fa-phone"></i>
+                Phone
+              </span>
+            </p>
+            <p>
+              012-345-6789, 012-345-6789
+            </p>
+            <p>
+              <span class="title">
+                <i class="fa fa-envelope"></i>
+                Email
+              </span>
+            </p>
+            <p>
+              email@gmail.com
+            </p>
+            <!-- end contact information -->
           </div>
-        </form>
-        <!-- End contact form -->
-        <!-- Contact information -->
-        <p>
-          <span class="title">
-            <i class="fa fa-map-marker"></i>
-            Address
-          </span>
-        </p>
-        <p>
-          Lorem ipsum dolor, Sit amet consectetur, Donec odio nisl convallis sed, Cursus non - 123456
-        </p>
-        <p>
-          <span class="title">
-            <i class="fa fa-phone"></i>
-            Phone
-          </span>
-        </p>
-        <p>
-          012-345-6789, 012-345-6789
-        </p>
-        <p>
-          <span class="title">
-            <i class="fa fa-envelope"></i>
-            Email
-          </span>
-        </p>
-        <p>
-          email@gmail.com
-        </p>
-        <!-- end contact information -->
+          <div class="clearfix"></div>
+        </div>
       </div>
-      <div class="clearfix"></div>
     </div>
     <!-- end sidebar content -->
   </div>
@@ -306,7 +372,7 @@
 
   <!-- Libraries jQuery and Bootstrap - Be careful to not remove them -->
   <script src="../js/jquery.js"></script>
-  <script src="../js/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+  <script src="../js/bootstrap/dist/js/bootstrap.js"></script>
 
   <!-- Automatic page load progress bar -->
   <script src="../js/pace.min.js"></script>
@@ -316,6 +382,9 @@
 
   <!-- Slider Background -->
   <script src="../js/vegas.js"></script>
+
+  <!-- Youtube Background -->
+  <script src="../js/jquery.mb.YTPlayer.min.js"></script>
 
   <!-- Countdown -->
   <script src="../js/jquery.countdown.min.js"></script>

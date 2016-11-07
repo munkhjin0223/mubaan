@@ -1,11 +1,16 @@
 $default-color: #4982c3;
+$default-color-opacity: rgba(73,130,195,0.8);
 
 ::selection {
   background: $default-color;
 }
 
-.team .item .social a:hover i {
-  color: $default-color;
+.heading .sep {
+  background-color: $default-color;
+}
+
+.team .item .social a:hover {
+  background-color: $default-color;
 }
 
 #middle .middle .menu a:hover {
@@ -16,12 +21,12 @@ $default-color: #4982c3;
   color: $default-color;
 }
 
-#contact-form div > div .btn-primary {
-  background: $default-color;
-}
-
+#contact-form div > div .btn-primary,
 #subscribe-form > div button {
   background: $default-color;
+  &:hover {
+    background: $default-color-opacity;
+  }
 }
 
 #social a:hover i {

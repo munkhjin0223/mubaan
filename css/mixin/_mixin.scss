@@ -32,7 +32,7 @@ $largedevice: 1200px;
   }
 }
 
-$largedeviceheight: 750px;
+$largedeviceheight: 769px;
 $smalldeviceheight: 540px;
 @mixin respondToHeight($media){
   @if $media == largeDeviceHeightUp {
