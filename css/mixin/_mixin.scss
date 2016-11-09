@@ -15,6 +15,9 @@ $largedevice: 1200px;
 	@else if $media == tabletUp {
     @media (min-width: $tablet) { @content; }
   }
+  @else if $media == spuANDsdd {
+    @media (min-width: $smartphone) and (max-width: $smalldevice) { @content; }
+  }
 	@else if $media == smallDeviceDown {
     @media (max-width: $smalldevice) { @content; }
   }
@@ -29,7 +32,7 @@ $largedevice: 1200px;
   }
 }
 
-$largedeviceheight: 750px;
+$largedeviceheight: 769px;
 $smalldeviceheight: 540px;
 @mixin respondToHeight($media){
   @if $media == largeDeviceHeightUp {
