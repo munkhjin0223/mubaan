@@ -13,6 +13,12 @@ $default-color-opacity: rgba(161,154,143,0.8);
   background-color: $default-color;
 }
 
+.aboutus {
+  .item:hover {
+    background-color: $default-color;
+  }
+}
+
 #middle .middle .menu a:hover {
   color: $default-color;
 }
@@ -31,4 +37,10 @@ $default-color-opacity: rgba(161,154,143,0.8);
 
 #social a:hover i {
   color: $default-color;
+}
+
+.contact-text h3{
+  span {
+    border-bottom: 1px solid $default-color;
+  }
 }

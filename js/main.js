@@ -1,10 +1,13 @@
+/*
+	Theme Name: Mubaan
+  Description: Coming Soon Template
+	Author: ThemePlusPlus
+  Theme URI: http://mubaan.themeplusplus.com
+  Author URI: http://themeforest.net/user/ThemePlusPlus
+	Version: 1.0
+*/
+
 /* *******************************************************
-
-	#Mubaan        // Coming Soon Template
-	@Author		     ThemePlusPlus
-	@Type          Javascript
-	@Version       1.0
-
 	TABLE OF CONTENTS
 	---------------------------
    1. Sidebar scrolling
@@ -16,7 +19,7 @@
 	 7. Displaying images
 	 8. Newsletter
    9. Placeholder
-
+   10. Map
 ******************************************************* */
 
 "use strict";
@@ -27,34 +30,34 @@
  */
 
 //set sidebar height and some responsive config
-function setHeight(){
+function setHeight() {
   var wheight = $(window).height();
   var width = $(window).width();
-  var height = wheight - wheight/5;
-  if(width>767){
+  var height = wheight - wheight / 5;
+  if (width > 767) {
     height = height - 100;
-    if($("#middle>div").hasClass("middle-in")){
-      $("#middle>div").css("height","auto");
+    if ($("#middle>div").hasClass("middle-in")) {
+      $("#middle>div").css("height", "auto");
       $("#middle>div").removeClass("middle-in");
       $("#social").removeClass("hide");
     }
-  }else{
-    $("#middle>div").css("height",wheight);
+  } else {
+    $("#middle>div").css("height", wheight);
     $("#middle>div").addClass("middle-in");
-    if(wheight<450) {
+    if (wheight < 450) {
       $("#social").addClass("hide");
-    }else {
+    } else {
       $("#social").removeClass("hide");
     }
   }
-  $(".sidebar").css("height",height);
+  $(".sidebar").css("height", height);
 }
 
-$(window).on("resize",function(){
+$(window).on("resize", function() {
   setHeight();
 });
 
-$(window).on("load",function(){
+$(window).on("load", function() {
   setHeight();
   // Plugin for the scrolling
   $(".sidebar").mCustomScrollbar();
@@ -80,32 +83,30 @@ $(document).ready(function() {
    * -----------------------------------------------------------------------------
    */
 
-    // Plugin for the slider background
-    $('#slider').vegas({
-      slides: [{
-        src: '../images/slider/img1.jpg'
-      }, {
-        src: '../images/slider/img2.jpg'
-      }, {
-        src: '../images/slider/img3.jpg'
-      }, {
-        src: '../images/slider/img4.jpg'
-      }]
-    });
+  // Plugin for the slider background
+  $('#slider').vegas({
+    slides: [{
+      src: '../images/slider/img1.jpg'
+    }, {
+      src: '../images/slider/img2.jpg'
+    }, {
+      src: '../images/slider/img3.jpg'
+    }, {
+      src: '../images/slider/img4.jpg'
+    }]
+  });
 
   /**
    * 4. Youtube Background
    * -----------------------------------------------------------------------------
    */
 
-   // Youtube Video Background
-   $(function(){
-     if($('body').hasClass('youtube-background')) {
-       $('.player').each(function() {
-         $('.player').YTPlayer();
-       });
-     }
-   });
+  // Youtube Video Background
+  if ($('body').hasClass('youtube-background')) {
+    $('.player').each(function() {
+      $('.player').YTPlayer();
+    });
+  }
 
   /**
    * 5. Countdown
@@ -124,45 +125,53 @@ $(document).ready(function() {
    * -----------------------------------------------------------------------------
    */
 
-   // Close left sidebar
-   function closeLeft() {
-     $("#left-sidebar").animate({left:"-100%"},500);
-   }
+  // Close left sidebar
+  function closeLeft() {
+    $("#left-sidebar").animate({
+      left: "-100%"
+    }, 500);
+  }
 
-   // Close right sidebar
-   function closeRight() {
-     $("#right-sidebar").animate({left:"100%"},500);
-   }
+  // Close right sidebar
+  function closeRight() {
+    $("#right-sidebar").animate({
+      left: "100%"
+    }, 500);
+  }
 
-   // Open left sidebar
-   function openLeft() {
-     $("#left-sidebar").animate({left:"0"},500);
-   }
+  // Open left sidebar
+  function openLeft() {
+    $("#left-sidebar").animate({
+      left: "0"
+    }, 500);
+  }
 
-   // Open right sidebar
-   function openRight() {
-     $("#right-sidebar").animate({left:"0"},500);
-   }
+  // Open right sidebar
+  function openRight() {
+    $("#right-sidebar").animate({
+      left: "0"
+    }, 500);
+  }
 
-   // Open left sidebar click event
-   $("#menu-l").on("click",function() {
-     openLeft();
-   });
+  // Open left sidebar click event
+  $("#menu-l").on("click", function() {
+    openLeft();
+  });
 
-   // Open right sidebar click event
-   $("#menu-r").on("click",function() {
-     openRight();
-   });
+  // Open right sidebar click event
+  $("#menu-r").on("click", function() {
+    openRight();
+  });
 
-   // Close left sidebar click event
-   $("#left-sidebar .close").on("click",function() {
-     closeLeft();
-   });
+  // Close left sidebar click event
+  $("#left-sidebar .close").on("click", function() {
+    closeLeft();
+  });
 
-   // Close right sidebar click event
-   $("#right-sidebar .close").on("click",function() {
-     closeRight();
-   });
+  // Close right sidebar click event
+  $("#right-sidebar .close").on("click", function() {
+    closeRight();
+  });
 
   /**
    * 7. Displaying images
@@ -180,19 +189,198 @@ $(document).ready(function() {
     }
   });
 
-/**
- * 8. Displaying images
- * -----------------------------------------------------------------------------
- */
+  /**
+   * 8. Displaying images
+   * -----------------------------------------------------------------------------
+   */
 
   // Plugin for the newsletter
   $("#subscribe-form").notifyMe();
 
-/**
- * 9. Place holder (for browser that doesn't support placeholder for input and textarea)
- * -----------------------------------------------------------------------------
- */
+  /**
+   * 9. Place holder (for browser that doesn't support placeholder for input and textarea)
+   * -----------------------------------------------------------------------------
+   */
 
   $('input, textarea').placeholder();
 
 });
+
+/**
+ * 10. Map
+ * -----------------------------------------------------------------------------
+ */
+
+// When the window has finished loading create our google map below
+google.maps.event.addDomListener(window, 'load', initMap);
+google.maps.event.addDomListener(window, 'resize', initMap);
+
+function initMap() {
+
+	var myLatlng = new google.maps.LatLng(47.8917439,106.831832);
+
+		// Basic options for a simple Google Map
+		// For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+		var mapOptions = {
+		// How zoomed in you want the map to start at (always required)
+		zoom: 9,
+		scrollwheel: false,
+		draggable: false,
+
+		// The latitude and longitude to center the map (always required)
+		center: myLatlng,
+
+		// How you would like to style the map.
+		// This is where you would paste any style found on Snazzy Maps.
+
+		styles: [
+
+		{
+	        "featureType": "landscape",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 65
+	            },
+	            {
+	                "visibility": "on"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "poi",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 51
+	            },
+	            {
+	                "visibility": "simplified"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "road.highway",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "visibility": "simplified"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "road.arterial",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 30
+	            },
+	            {
+	                "visibility": "on"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "road.local",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 40
+	            },
+	            {
+	                "visibility": "on"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "transit",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "visibility": "simplified"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "administrative.province",
+	        "stylers": [
+	            {
+	                "visibility": "off"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "water",
+	        "elementType": "labels",
+	        "stylers": [
+	            {
+	                "visibility": "on"
+	            },
+	            {
+	                "lightness": -25
+	            },
+	            {
+	                "saturation": -100
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "water",
+	        "elementType": "geometry",
+	        "stylers": [
+	            {
+	                "hue": "#ffff00"
+	            },
+	            {
+	                "lightness": -25
+	            },
+	            {
+	                "saturation": -97
+	            }
+	        ]
+	    },
+
+	    ]
+
+	};
+
+	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+	// Set the text contained in the bubble; Let this part well in one line, no newline.
+	var contentString = '<div class="info-content"><h2>We are here <small>Ulaanbaatar, Mongolia</small></h2><p>Located in the center of the city, lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum euismod erat, nec porta turpis fringilla sed.</p></div>';
+
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString
+	});
+
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		map: map,
+		title: 'More informations'
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+	});
+
+}

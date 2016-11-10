@@ -10,6 +10,10 @@
   background-color: #a19a8f;
 }
 
+.aboutus .item:hover {
+  background-color: #a19a8f;
+}
+
 #middle .middle .menu a:hover {
   color: #a19a8f;
 }
@@ -30,4 +34,8 @@
 
 #social a:hover i {
   color: #a19a8f;
+}
+
+.contact-text h3 span {
+  border-bottom: 1px solid #a19a8f;
 }
