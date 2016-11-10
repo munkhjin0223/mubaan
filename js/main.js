@@ -19,6 +19,7 @@
 	 7. Displaying images
 	 8. Newsletter
    9. Placeholder
+   10. Map
 ******************************************************* */
 
 "use strict";
@@ -204,3 +205,182 @@ $(document).ready(function() {
   $('input, textarea').placeholder();
 
 });
+
+/**
+ * 10. Map
+ * -----------------------------------------------------------------------------
+ */
+
+// When the window has finished loading create our google map below
+google.maps.event.addDomListener(window, 'load', initMap);
+google.maps.event.addDomListener(window, 'resize', initMap);
+
+function initMap() {
+
+	var myLatlng = new google.maps.LatLng(47.8917439,106.831832);
+
+		// Basic options for a simple Google Map
+		// For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+		var mapOptions = {
+		// How zoomed in you want the map to start at (always required)
+		zoom: 9,
+		scrollwheel: false,
+		draggable: false,
+
+		// The latitude and longitude to center the map (always required)
+		center: myLatlng,
+
+		// How you would like to style the map.
+		// This is where you would paste any style found on Snazzy Maps.
+
+		styles: [
+
+		{
+	        "featureType": "landscape",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 65
+	            },
+	            {
+	                "visibility": "on"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "poi",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 51
+	            },
+	            {
+	                "visibility": "simplified"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "road.highway",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "visibility": "simplified"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "road.arterial",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 30
+	            },
+	            {
+	                "visibility": "on"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "road.local",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "lightness": 40
+	            },
+	            {
+	                "visibility": "on"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "transit",
+	        "stylers": [
+	            {
+	                "saturation": -100
+	            },
+	            {
+	                "visibility": "simplified"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "administrative.province",
+	        "stylers": [
+	            {
+	                "visibility": "off"
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "water",
+	        "elementType": "labels",
+	        "stylers": [
+	            {
+	                "visibility": "on"
+	            },
+	            {
+	                "lightness": -25
+	            },
+	            {
+	                "saturation": -100
+	            }
+	        ]
+	    },
+
+	    {
+	        "featureType": "water",
+	        "elementType": "geometry",
+	        "stylers": [
+	            {
+	                "hue": "#ffff00"
+	            },
+	            {
+	                "lightness": -25
+	            },
+	            {
+	                "saturation": -97
+	            }
+	        ]
+	    },
+
+	    ]
+
+	};
+
+	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+	// Set the text contained in the bubble; Let this part well in one line, no newline.
+	var contentString = '<div class="info-content"><h2>We are here <small>Ulaanbaatar, Mongolia</small></h2><p>Located in the center of the city, lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum euismod erat, nec porta turpis fringilla sed.</p></div>';
+
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString
+	});
+
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		map: map,
+		title: 'More informations'
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+	});
+
+}
