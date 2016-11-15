@@ -707,7 +707,7 @@ p {
 }
 @include respondTo(sddANDeld) {
   #middle .middle h1 {
-    font-size: 69px;
+    font-size: 64px;
   }
 }
 @include respondToHeight(largeDeviceHeightUp) {
