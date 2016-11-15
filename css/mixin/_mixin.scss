@@ -2,6 +2,7 @@ $smartphone: 479px;
 $tablet: 767px;
 $smalldevice: 992px;
 $largedevice: 1200px;
+$extralargedevice: 1400px;
 @mixin respondTo($media) {
   @if $media == smartPhoneDown {
     @media (max-width: $smartphone) { @content; }
@@ -29,6 +30,9 @@ $largedevice: 1200px;
   }
   @else if $media == largeDeviceUp {
     @media (min-width: $largedevice) { @content; }
+  }
+  @else if $media == sddANDeld {
+    @media (min-width: $smalldevice) and (max-width: $extralargedevice) { @content; }
   }
 }
 

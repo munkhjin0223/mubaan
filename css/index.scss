@@ -705,6 +705,11 @@ p {
     }
   }
 }
+@include respondTo(sddANDeld) {
+  #middle .middle h1 {
+    font-size: 69px;
+  }
+}
 @include respondToHeight(largeDeviceHeightUp) {
   #middle {
     .middle {

@@ -763,6 +763,12 @@ p {
   }
 }
 
+@media (min-width: 992px) and (max-width: 1400px) {
+  #middle .middle h1 {
+    font-size: 69px;
+  }
+}
+
 @media (min-height: 769px) {
   #middle .middle {
     padding-top: 10%;
