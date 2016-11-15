@@ -30,7 +30,7 @@
  */
 body {
   background-color: #1f1f1f;
-  font-family: 'Open Sans', Times new roman , serif;
+  font-family: 'Raleway', Times new roman , serif;
   color: #fff;
 }
 
@@ -44,8 +44,15 @@ a:hover, a:link, a:visited {
   text-decoration: none;
 }
 
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
 p {
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 :focus {
@@ -140,12 +147,14 @@ p {
 }
 
 .heading {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .heading h2 {
   margin: 100px 0 10px;
   font-size: 40px;
+  font-weight: bold;
+  font-family: "Montserrat";
 }
 
 .heading .sep {
@@ -202,7 +211,7 @@ p {
 }
 
 .aboutus .item h3 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .aboutus .item p {
@@ -220,7 +229,7 @@ p {
 .team .item .img img {
   max-width: 100%;
   height: auto;
-  background: #f5f5f5;
+  background-color: #f5f5f5;
   transform: scale(1);
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -233,8 +242,6 @@ p {
 
 .team .item h3 {
   margin: 20px 0 0;
-  text-transform: uppercase;
-  font-size: 22px;
 }
 
 .team .item h4 {
@@ -376,7 +383,7 @@ p {
 }
 
 #right-sidebar p {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 15px;
   font-size: 16px;
 }
@@ -429,8 +436,8 @@ p {
 
 .contact-text h3 {
   overflow: hidden;
-  font-size: 18px;
   line-height: 18px;
+  font-size: 16px;
 }
 
 .contact-text h3 i {
@@ -452,7 +459,7 @@ p {
 
 #map {
   width: 100%;
-  height: 300px;
+  height: 280px;
 }
 
 #map .info-content {
@@ -539,10 +546,10 @@ p {
 }
 
 #middle .middle h1 {
-  margin: 50px 0 15px;
-  font-size: 70px;
+  margin: 50px 0 10px;
+  font-size: 80px;
   font-weight: 400;
-  font-family: "Oswald";
+  font-family: "Montserrat";
 }
 
 #middle .middle h2 {
@@ -581,7 +588,7 @@ p {
   padding: 5px 0;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  font-family: "Oswald";
+  font-family: "Montserrat";
   font-size: 34px;
 }
 
@@ -753,6 +760,12 @@ p {
   }
   #left-sidebar .services > div > div:nth-child(1), #left-sidebar .services > div > div:nth-child(2), #left-sidebar .services > div > div:nth-child(3) {
     border-top: 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+  #middle .middle h1 {
+    font-size: 64px;
   }
 }
 
