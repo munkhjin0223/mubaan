@@ -128,29 +128,41 @@ $(document).ready(function() {
   // Close left sidebar
   function closeLeft() {
     $("#left-sidebar").animate({
-      left: "-100%"
-    }, 500);
+        "opacity": 0
+      }, 500, function(){
+      $("#left-sidebar").css("z-index",-1);
+      $(".middle,#social").fadeIn(1000);
+    });
   }
 
   // Close right sidebar
   function closeRight() {
     $("#right-sidebar").animate({
-      left: "100%"
-    }, 500);
+        "opacity": 0
+      }, 500, function(){
+      $("#right-sidebar").css("z-index",-1);
+      $(".middle,#social").fadeIn(1000);
+    });
   }
 
   // Open left sidebar
   function openLeft() {
-    $("#left-sidebar").animate({
-      left: "0"
-    }, 500);
+    $(".middle,#social").fadeOut(function(){
+      $("#left-sidebar").css("z-index",1);
+      $("#left-sidebar").animate({
+        "opacity": 1
+      }, 500);
+    });
   }
 
   // Open right sidebar
   function openRight() {
-    $("#right-sidebar").animate({
-      left: "0"
-    }, 500);
+    $(".middle,#social").fadeOut(function(){
+      $("#right-sidebar").css("z-index",1);
+      $("#right-sidebar").animate({
+        "opacity": 1
+      }, 500);
+    });
   }
 
   // Open left sidebar click event

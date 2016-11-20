@@ -170,8 +170,10 @@ p {
 #left-sidebar,
 #right-sidebar {
   position: fixed;
-  z-index: 1;
+  z-index: -1;
   top: 0;
+  left: 0;
+  opacity: 0;
   width: 100%;
   height: 100%;
   background-color: #1f1f1f;
@@ -182,10 +184,6 @@ p {
  * 2.1 Left sidebar
  * -----------------------------------------------------------------------------
  */
-#left-sidebar {
-  left: -100%;
-}
-
 #left-sidebar .text {
   margin-bottom: 30px;
   line-height: 2;
@@ -374,10 +372,6 @@ p {
  * 2.2 Right sidebar
  * -----------------------------------------------------------------------------
  */
-#right-sidebar {
-  left: 100%;
-}
-
 #right-sidebar h2 {
   margin-bottom: 20px;
 }
@@ -562,7 +556,7 @@ p {
   margin: 0 0 60px;
   font-size: 17px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
 }
 
 #middle .middle .menu {
@@ -572,6 +566,7 @@ p {
 
 #middle .middle .menu a {
   float: left;
+  font-weight: bold;
   margin: 0 15px;
   color: #fff;
   line-height: 40px;
