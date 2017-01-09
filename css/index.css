@@ -10,13 +10,12 @@
 	TABLE OF CONTENTS
 	---------------------------
 	 1. Global
-	 2. Sidebar
-	 	 2.1 Left sidebar
+	 2. Popup
+	 	 2.1 More info popup
       2.1.1 About us
       2.1.2 Team
       2.1.3 Portfolio
-      2.1.4 Service
-	 	 2.2 Right sidebar
+	 	 2.2 Contact popup
       2.2.1 Contact
    3. Middle
     3.1 Countdown
@@ -55,6 +54,26 @@ p {
   letter-spacing: 1px;
 }
 
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #333;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #333;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #333;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #333;
+}
+
 :focus {
   outline: none;
 }
@@ -71,6 +90,10 @@ p {
   margin-top: 0 !important;
 }
 
+.p0 {
+  padding: 0 !important;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -78,12 +101,24 @@ p {
 .close {
   position: absolute;
   z-index: 1;
-  top: 70px;
-  right: 70px;
+  top: 0;
+  right: 0;
   background: url("../img/close.png");
   width: 40px;
   height: 40px;
   opacity: 1;
+}
+
+.close:hover {
+  opacity: 0.7;
+}
+
+.close-small {
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/close-small.png");
 }
 
 .mCSB_inside > .mCSB_container {
@@ -151,7 +186,7 @@ p {
 }
 
 .heading h2 {
-  margin: 100px 0 10px;
+  margin: 50px 0 10px;
   font-size: 40px;
   font-weight: bold;
   font-family: "Montserrat";
@@ -161,30 +196,87 @@ p {
   width: 80px;
   height: 3px;
   margin: 0 auto;
+  background-color: #000;
 }
 
-/**
- * 2. Sidebar
- * -----------------------------------------------------------------------------
- */
-#left-sidebar,
-#right-sidebar {
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
+/* Menu hover */
+.btn-hover {
+  overflow: hidden;
+}
+
+.btn-hover:after {
+  width: 0;
+  height: 103%;
+  top: 50%;
+  left: 50%;
+  background: #fff;
   opacity: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1f1f1f;
-  padding: 10% 50px 100px;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.btn-hover:hover,
+.btn-hover:active {
+  color: #0e83cd;
+}
+
+.btn-hover:hover:after {
+  width: 90%;
+  opacity: 1;
+}
+
+.btn-hover:active:after {
+  width: 101%;
+  opacity: 1;
+}
+
+.fancybox-overlay, .fancybox-opened {
+  z-index: 20000;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: #000;
 }
 
 /**
- * 2.1 Left sidebar
+ * 2. Popup
  * -----------------------------------------------------------------------------
  */
-#left-sidebar .text {
+.popup-container .popup {
+  padding: 50px 10px 50px 30px;
+}
+
+.remodal-wrapper {
+  padding: 0;
+}
+
+.remodal-wrapper .remodal {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.remodal-wrapper .remodal-small {
+  max-width: 500px;
+}
+
+.remodal-wrapper .remodal-small .popup-small {
+  margin: 3px;
+  border: 3px solid #1f1f1f;
+  padding: 30px;
+}
+
+.remodal-wrapper .remodal-small .popup-small .heading h2 {
+  font-size: 30px;
+}
+
+/**
+ * 2.1 More info popup
+ * -----------------------------------------------------------------------------
+ */
+#moreInfoPopup .text {
   margin-bottom: 30px;
   line-height: 2;
   font-size: 15px;
@@ -196,8 +288,8 @@ p {
  */
 .aboutus .item {
   margin-bottom: 10px;
-  padding: 30px 20px;
-  border: 1px solid #fff;
+  padding: 30px 15px;
+  border: 1px solid #000;
   text-align: center;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -216,10 +308,19 @@ p {
   line-height: 1.7;
 }
 
+.aboutus .item:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 /**
  * 2.1.2 Team
  * -----------------------------------------------------------------------------
  */
+.team .item {
+  border: 1px solid #000;
+}
+
 .team .item .img {
   overflow: hidden;
 }
@@ -234,12 +335,10 @@ p {
   transition: 0.3s;
 }
 
-.team .item .img:hover img {
-  transform: scale(1.1);
-}
-
 .team .item h3 {
-  margin: 20px 0 0;
+  margin: 0;
+  border-top: 1px solid #000;
+  padding-top: 20px;
 }
 
 .team .item h4 {
@@ -249,22 +348,31 @@ p {
 
 .team .item p {
   margin: 15px 0;
+  padding: 0 15px;
 }
 
 .team .item .social {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .team .item .social a {
   display: inline-block;
   width: 26px;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   margin: 0 5px;
   line-height: 26px;
   text-align: center;
 }
 
 .team .item .social a i {
+  color: #000;
+}
+
+.team .item .social a:hover {
+  background-color: #000;
+}
+
+.team .item .social a:hover i {
   color: #fff;
 }
 
@@ -339,6 +447,7 @@ p {
 
 .portfolio .fancybox .hover .caption p {
   margin-bottom: 20px;
+  padding: 0 20px;
 }
 
 .portfolio .fancybox:hover .hover {
@@ -353,30 +462,14 @@ p {
 }
 
 /**
- * 2.1.4 Service
+ * 2.2 Contact popup
  * -----------------------------------------------------------------------------
  */
-.services > div > div {
-  padding: 30px 0;
-}
-
-.services > div > div .item {
-  padding: 0 20px;
-}
-
-.services > div > div .item i {
-  font-size: 30px;
-}
-
-/**
- * 2.2 Right sidebar
- * -----------------------------------------------------------------------------
- */
-#right-sidebar h2 {
+#contactPopup h2 {
   margin-bottom: 20px;
 }
 
-#right-sidebar p {
+#contactPopup p {
   margin-top: 10px;
   margin-bottom: 15px;
   font-size: 16px;
@@ -398,8 +491,8 @@ p {
 #contact-form div > div input,
 #contact-form div > div textarea {
   width: 100%;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #000;
+  color: #000;
   background: none;
   margin-top: 20px;
   padding: 5px 10px;
@@ -422,6 +515,8 @@ p {
 #contact-form div > div button {
   padding: 10px;
   font-size: 20px;
+  color: #fff;
+  border: 0;
 }
 
 .contact-text {
@@ -541,14 +636,14 @@ p {
 
 #middle .middle h1 {
   margin: 50px 0 10px;
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 400;
   font-family: "Montserrat";
 }
 
 #middle .middle h2 {
   margin: 0 0 20px;
-  font-size: 22px;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
@@ -560,17 +655,32 @@ p {
 }
 
 #middle .middle .menu {
-  margin-top: 10px;
+  margin-top: 20px;
   display: inline-block;
 }
 
 #middle .middle .menu a {
-  float: left;
-  font-weight: bold;
-  margin: 0 15px;
+  position: relative;
+  display: inline-block;
+  width: 140px;
+  text-align: center;
+  margin: 0 25px 10px;
   color: #fff;
   line-height: 40px;
-  font-size: 17px;
+  font-size: 18px;
+  border: 1px solid #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#middle .middle .menu a:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 /**
@@ -579,27 +689,28 @@ p {
  */
 .countdown {
   overflow: hidden;
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 5px 0;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  font-family: "Montserrat";
-  font-size: 34px;
 }
 
 .countdown #countdown {
   margin: 0 auto;
-  width: 365px;
+  width: 720px;
 }
 
 .countdown #countdown span {
   float: left;
-  width: 90px;
+  width: 180px;
   padding: 0;
   margin: 0;
   border-right: 1px solid #fff;
   text-align: center;
-  line-height: 40px;
+  line-height: 70px;
+  font-weight: 400;
+  font-size: 60px;
+  font-family: "Cuprum";
 }
 
 .countdown #countdown span:first-child {
@@ -611,7 +722,7 @@ p {
  * -----------------------------------------------------------------------------
  */
 #subscribe-form {
-  margin-top: 60px;
+  margin-top: 35px;
 }
 
 #subscribe-form > div {
@@ -625,7 +736,7 @@ p {
   background: none;
   margin: 0;
   padding: 0 10px;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   font-size: 17px;
@@ -635,11 +746,12 @@ p {
   float: left;
   width: 130px;
   height: 40px;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   border-left: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 17px;
+  color: #fff;
 }
 
 #subscribe-form > div label {
@@ -688,30 +800,31 @@ p {
  */
 @media (max-width: 479px) {
   .close {
-    top: 20px;
-    right: 20px;
     width: 20px;
     height: 20px;
     background: url("../img/close-small.png");
   }
-  #left-sidebar, #right-sidebar {
-    padding: 40px 30px;
+  .team .item {
+    margin-bottom: 20px;
   }
-  #left-sidebar .team > div > div {
+  #moreInfoPopup, #contactPopup {
+    padding: 0;
+  }
+  #moreInfoPopup .team > div > div {
     width: 100%;
   }
-  #middle .middle #subscribe-form > div input {
-    width: 180px;
-  }
-  #middle .middle #subscribe-form > div button {
-    width: 100px;
-  }
   #middle .middle h1 {
-    font-size: 38px;
+    font-size: 25px;
     margin: 25px 0 5px;
   }
   #middle .middle h2 {
-    font-size: 15px;
+    font-size: 12px;
+  }
+  #subscribe-form > div input {
+    width: 180px;
+  }
+  #subscribe-form > div button {
+    width: 100px;
   }
   .countdown, #subscribe-form {
     margin-top: 25px;
@@ -722,6 +835,7 @@ p {
   .countdown #countdown span {
     width: 72px;
     font-size: 23px;
+    line-height: 30px;
   }
 }
 
@@ -729,8 +843,16 @@ p {
   #middle .middle h1 {
     font-size: 45px;
   }
-  .countdown span {
+  #middle .middle h2 {
+    font-size: 17px;
+  }
+  .countdown #countdown {
+    width: 480px;
+  }
+  .countdown #countdown span {
+    width: 120px;
     font-size: 30px;
+    line-height: 40px;
   }
   #subscribe-form > div input {
     width: 250px;
@@ -743,36 +865,37 @@ p {
     left: 5%;
     width: 90%;
   }
+  .remodal {
+    max-width: 98%;
+  }
 }
 
 @media (min-width: 1200px) {
-  #left-sidebar .services > div > div {
-    border-top: 1px solid #fff;
-    border-right: 1px solid #fff;
-  }
-  #left-sidebar .services > div > div:nth-child(3n) {
-    border-right: 0;
-  }
-  #left-sidebar .services > div > div:nth-child(1), #left-sidebar .services > div > div:nth-child(2), #left-sidebar .services > div > div:nth-child(3) {
-    border-top: 0;
+  .remodal {
+    max-width: 1170px;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1400px) {
+@media (min-width: 992px) and (max-width: 1600px) {
   #middle .middle h1 {
     font-size: 64px;
   }
 }
 
+@media (min-height: 680px) {
+  .countdown {
+    margin-top: 65px;
+  }
+  #middle .middle .menu {
+    margin-top: 65px;
+  }
+}
+
 @media (min-height: 769px) {
   #middle .middle {
-    padding-top: 10%;
+    padding-top: 7%;
   }
   #middle #social {
     bottom: 50px;
-  }
-  #middle .middle .menu,
-  #middle #social .menu {
-    margin-top: 50px;
   }
 }

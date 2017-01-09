@@ -2,7 +2,7 @@ $smartphone: 479px;
 $tablet: 767px;
 $smalldevice: 992px;
 $largedevice: 1200px;
-$extralargedevice: 1400px;
+$extralargedevice: 1600px;
 @mixin respondTo($media) {
   @if $media == smartPhoneDown {
     @media (max-width: $smartphone) { @content; }
@@ -37,7 +37,7 @@ $extralargedevice: 1400px;
 }
 
 $largedeviceheight: 769px;
-$smalldeviceheight: 540px;
+$smalldeviceheight: 680px;
 @mixin respondToHeight($media){
   @if $media == largeDeviceHeightUp {
     @media (min-height: $largedeviceheight) { @content; }

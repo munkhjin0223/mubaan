@@ -6,16 +6,16 @@ $default-color-opacity: rgba(143,171,48,0.8);
 }
 
 .heading .sep {
-  background-color: $default-color;
+  // background-color: $default-color;
 }
 
 .team .item .social a:hover {
-  background-color: $default-color;
+  // background-color: $default-color;
 }
 
 .aboutus {
   .item:hover {
-    background-color: $default-color;
+    // background-color: $default-color;
   }
 }
 
@@ -23,7 +23,7 @@ $default-color-opacity: rgba(143,171,48,0.8);
   color: $default-color;
 }
 
-#countdown .s {
+.em {
   color: $default-color;
 }
 

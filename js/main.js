@@ -10,26 +10,25 @@
 /* *******************************************************
 	TABLE OF CONTENTS
 	---------------------------
-   1. Sidebar scrolling
+   1. Popup scrolling
    2. Automatic page load progress bar
 	 3. Slider Background
 	 4. Youtube Background
 	 5. Countdown
-	 6. Navigate sidebar
-	 7. Displaying images
-	 8. Newsletter
-   9. Placeholder
-   10. Map
+	 6. Displaying images
+	 7. Newsletter
+   8. Placeholder
+   9. Map
 ******************************************************* */
 
 "use strict";
 
 /**
- * 1. Sidebar scrolling
+ * 1. Popup scrolling
  * -----------------------------------------------------------------------------
  */
 
-//set sidebar height and some responsive config
+//set popup height and some responsive config
 function setHeight() {
   var wheight = $(window).height();
   var width = $(window).width();
@@ -50,7 +49,7 @@ function setHeight() {
       $("#social").removeClass("hide");
     }
   }
-  $(".sidebar").css("height", height);
+  $(".popup").css("height", height);
 }
 
 $(window).on("resize", function() {
@@ -60,7 +59,7 @@ $(window).on("resize", function() {
 $(window).on("load", function() {
   setHeight();
   // Plugin for the scrolling
-  $(".sidebar").mCustomScrollbar();
+  $(".popup").mCustomScrollbar();
 });
 
 $(document).ready(function() {
@@ -114,79 +113,14 @@ $(document).ready(function() {
    */
 
   // Plugin for the countdown
-  $("#countdown").countdown("2017-02-01 00:00", function(event) {
+  $("#countdown").countdown("2017-04-01 00:00", function(event) {
     $(this).html(
-      event.strftime('<span class="s">%Dd</span><span> %Hh</span> <span>%Mm</span> <span>%Ss</span>')
+      event.strftime('<span class="em">%Dd</span><span> %Hh</span> <span>%Mm</span> <span>%Ss</span>')
     );
   });
 
   /**
-   * 6. Navigate sidebar
-   * -----------------------------------------------------------------------------
-   */
-
-  // Close left sidebar
-  function closeLeft() {
-    $("#left-sidebar").animate({
-        "opacity": 0
-      }, 500, function(){
-      $("#left-sidebar").css("z-index",-1);
-      $(".middle,#social").fadeIn(1000);
-    });
-  }
-
-  // Close right sidebar
-  function closeRight() {
-    $("#right-sidebar").animate({
-        "opacity": 0
-      }, 500, function(){
-      $("#right-sidebar").css("z-index",-1);
-      $(".middle,#social").fadeIn(1000);
-    });
-  }
-
-  // Open left sidebar
-  function openLeft() {
-    $(".middle,#social").fadeOut(function(){
-      $("#left-sidebar").css("z-index",1);
-      $("#left-sidebar").animate({
-        "opacity": 1
-      }, 500);
-    });
-  }
-
-  // Open right sidebar
-  function openRight() {
-    $(".middle,#social").fadeOut(function(){
-      $("#right-sidebar").css("z-index",1);
-      $("#right-sidebar").animate({
-        "opacity": 1
-      }, 500);
-    });
-  }
-
-  // Open left sidebar click event
-  $("#menu-l").on("click", function() {
-    openLeft();
-  });
-
-  // Open right sidebar click event
-  $("#menu-r").on("click", function() {
-    openRight();
-  });
-
-  // Close left sidebar click event
-  $("#left-sidebar .close").on("click", function() {
-    closeLeft();
-  });
-
-  // Close right sidebar click event
-  $("#right-sidebar .close").on("click", function() {
-    closeRight();
-  });
-
-  /**
-   * 7. Displaying images
+   * 6. Displaying images
    * -----------------------------------------------------------------------------
    */
 
@@ -202,7 +136,7 @@ $(document).ready(function() {
   });
 
   /**
-   * 8. Displaying images
+   * 7. Displaying images
    * -----------------------------------------------------------------------------
    */
 
@@ -210,7 +144,7 @@ $(document).ready(function() {
   $("#subscribe-form").notifyMe();
 
   /**
-   * 9. Place holder (for browser that doesn't support placeholder for input and textarea)
+   * 8. Place holder (for browser that doesn't support placeholder for input and textarea)
    * -----------------------------------------------------------------------------
    */
 
@@ -219,7 +153,7 @@ $(document).ready(function() {
 });
 
 /**
- * 10. Map
+ * 9. Map
  * -----------------------------------------------------------------------------
  */
 
@@ -396,3 +330,7 @@ function initMap() {
 	});
 
 }
+
+$(document).on('opening', '.remodal', function () {
+  initMap();
+});
