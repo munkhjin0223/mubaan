@@ -1,0 +1,102 @@
+@import "../js/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+.space20 {
+  padding-top: 20px;
+}
+
+body {
+  // overflow: hidden;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 32px;
+}
+
+h3.sub-header {
+  font-size: 22px;
+}
+
+.grey {
+  background-color: #eee;
+  .sub-header {
+    border-color: #ccc;
+  }
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+  .navbar-header {
+    .navbar-toggle {
+      margin-top: 19px;
+    }
+    .navbar-brand {
+      height: 70px;
+      line-height: 40px;
+      font-size: 17px;
+      text-transform: uppercase;
+      .name {
+        color: #fff;
+      }
+    }
+  }
+  .navbar-nav >li >a {
+    padding: 25px 20px;
+  }
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  position: relative;
+  section {
+    padding: 70px 0;
+    .jumbotron {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      h1 {
+        margin-bottom: 30px;
+        font-size: 40px;
+      }
+      p {
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+    }
+    .features {
+      ul {
+        margin-top: 20px;
+        li {
+          padding-bottom: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+    .bd {
+      padding: 20px 0;
+      h3 {
+        margin: 25px 0;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

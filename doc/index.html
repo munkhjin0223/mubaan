@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Documentation | MUBAAN Coming Soon Template</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700,700italic&subset=latin,latin-ext,greek,greek-ext,vietnamese,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Mubaan documentation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#welcome"><span class="name">Mubaan</span> documentation</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#animation">Animation</a></li>
+          <li><a href="#color">Color</a></li>
+          <li><a href="#countdown">Count down</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#credits">Credits</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main">
+    <section id="welcome">
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Welcome To Mubaan documentation</h1>
+          <p>Thank you for purchasing our theme.</p>
+          <p>If you have any questions that are beyond the scope of this documentation, please feel free to <a target="_blank" href="https://themeforest.net/user/themeplusplus">contact us</a> or by email <a href="mailto:themeplusplus@gmail.com">themeplusplus@gmail.com</a>.</p>
+          <div class="space20"></div>
+        </div>
+      </div>
+      <div class="features">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <h3 class="sub-header">Template Features</h3>
+              <ul>
+                <li>Cleaned & Simple Design
+                <li>HTML5 & CSS3
+                <li>Fully Responsive Design
+                <li>Ajax/PHP Contact Form
+                <li>All files are well commented
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <h3 class="sub-header">Browser support</h3>
+              <ul>
+                <li>IE9+
+                <li>Firefox
+                <li>Safari
+                <li>Opera
+                <li>Chrome
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="installation" class="grey">
+      <div class="container">
+        <h2 class="sub-header">Installation</h2>
+        <div class="bd">
+          <p>After you have finished creating your site with our theme, all you need to do is upload the contents of your project onto your hosting server via FTP.</p>
+          <p>You can learn more about this <a href="https://wiki.filezilla-project.org/Using" target="_blank">here</a>.</p>
+        </div>
+      </div>
+    </section>
+    <section id="background">
+      <div class="container">
+        <h2 class="sub-header">Background</h2>
+        <div class="bd">
+          <ol>
+            <li>Find div with "middle" id</li>
+            <li>Add bottom <strong>bold</strong> html above div</li>
+          </ol>
+          <h3>Youtube background</h3>
+          <ol>
+            <li>Open the file "*.html"<br><br>
+              <pre>
+                <code>
+                  &lt;div id="middle"&gt;
+                    &lt;div&gt;
+                      <strong>&lt;div class="bg"&gt;
+                        &lt;a class="player" data-property="{videoURL:'SHwTTW_6_eU', containment:'.bg', autoPlay:true, mute:true, quality: 'small', startAt:0, showControls:false, opacity:1}"&gt;&lt;/a&gt;
+                      &lt;/div&gt;</strong>
+                      ...
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </li>
+            <li>What you can pass to the “videoURL” paramenter:<br><br>
+                To retrive the video from YouTube you can use any of the following string:<br><br>
+                <ul>
+                  <li>The URL of the page containing the video<br>
+                    <strong>videoURL: ‘https://www.youtube.com/watch?v=V2rifmjZuKQ’.</strong></li>
+                  <li>
+                    The short URL available fron the YouTube share panel <bR>
+                    <strong>videoURL: ‘http://youtu.be/V2rifmjZuKQ’.</strong>
+                  </li>
+                  <li>The video ID<br>
+                    <strong>videoURL: ‘V2rifmjZuKQ’.</strong>
+                  </li>
+                </ul>
+
+            </li>
+          </ol>
+          <h3>Image slideshow background</h3>
+          <ol>
+            <li>Open the file "*.html"<br><br>
+              <pre>
+                <code>
+                  &lt;div id="middle"&gt;
+                    &lt;div&gt;
+                      <strong>&lt;div id="slider" class="bg"&gt;&lt;/div&gt;</strong>
+                      ...
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </li>
+            <li>Open the file "js/main.js"<br><br>
+              <pre>
+                <code>
+                  $('#slider').vegas({
+                    slides: [{
+                      src: '../images/1920x1280.png'
+                    }, {
+                      src: '../images/1920x1280.png'
+                    }, {
+                      src: '../images/1920x1280.png'
+                    }, {
+                      src: '../images/1920x1280.png'
+                    }]
+                  });
+                </code>
+              </pre>
+            </li>
+          </ol>
+          <h3>Single image background</h3>
+          <ol>
+            <li>Open the file "*.html"<br><br>
+              <pre>
+                <code>
+                  &lt;div id="middle"&gt;
+                    &lt;div&gt;
+                      <strong>&lt;div id="single" class="bg"&gt;&lt;/div&gt;</strong>
+                    ...
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </li>
+            <li>Open the file "css/index.css"<br><br>
+              <pre>
+                <code>
+                  .bg#single {
+                    background: url("../images/1920x1280.png") no-repeat center center fixed;
+                </code>
+              </pre>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section id="animation" class="grey">
+      <div class="container">
+        <h2 class="sub-header">Animation</h2>
+        <ol>
+          <li>Find div with "middle" id</li>
+          <li>Add bottom <strong>bold</strong> html below div</li>
+          <li>Add scripts to bottom of html</li>
+        </ol>
+        <div class="bd">
+          <h3>Constellation animation</h3>
+          <pre>
+            <code>
+                &lt;div id="middle"&gt;
+                  &lt;div&gt;
+                    ...
+                    <strong>&lt;canvas id="constellation"&gt;&lt;/canvas&gt;</strong>
+                &lt;/div&gt;
+                ...
+                <strong>&lt;script src="../js/animation/TweenLite.min.js"&gt;&lt;/script&gt;
+                &lt;script src="../js/animation/EasePack.min.js"&gt;&lt;/script&gt;
+                &lt;script src="../js/animation/rAF.js"&gt;&lt;/script&gt;
+                &lt;script src="../js/animation/constellation.js"&gt;&lt;/script&gt;</strong>
+              &lt;/body&gt;
+            </code>
+          </pre>
+          <h3>Low-poly animation</h3>
+          <pre>
+            <code>
+                &lt;div id="middle"&gt;
+                  &lt;div&gt;
+                    ...
+                    <strong>&lt;canvas id="lowpoly"&gt;&lt;/canvas&gt;</strong>
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                ...
+                <strong>&lt;script src="../js/animation/rAF.js"&gt;&lt;/script&gt;
+                &lt;script src="../js/animation/lowpoly.js"&gt;&lt;/script&gt;</strong>
+              &lt;/body&gt;
+            </code>
+          </pre>
+          <h3>Starfield animation</h3>
+          <p>
+            Add script to head
+          </p>
+          <pre>
+            <code>
+                <strong>&lt;script src="../js/animation/starfield.js"&gt;&lt;/script&gt;</strong>
+              &lt;/head&gt;
+              &lt;body&gt;
+                ...
+                &lt;div id="middle"&gt;
+                  &lt;div&gt;
+                    <strong>&lt;div class="bg"&gt;&lt;/div&gt;</strong>
+                    ...
+                    <strong>&lt;canvas id="starfield"&gt;&lt;/canvas&gt;</strong>
+                  &lt;div&gt;
+                &lt;/div&gt;
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section id="color">
+      <div class="container">
+        <h2 class="sub-header">Color</h2>
+        <div class="bd">
+          <p>
+            There are 4 color options (blue, green, grey, orange). You can change it.
+          </p>
+          <ol>
+            <li>Open the html file</li>
+            <li>You will find in head:<br><br>
+              <pre>
+                <code>
+                  &lt;link rel="stylesheet" type="text/css" href="../css/colors/green.css" /&gt;
+                </code>
+              </pre>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section id="countdown" class="grey">
+      <div class="container">
+        <h2 class="sub-header">Countdown</h2>
+        <div class="bd">
+          <ol>
+            <li>Open the file "js/main.js"</li>
+            <li>You will find:<br><br>
+              <pre>
+                <code>
+                  $("#countdown").countdown("2017-01-01 00:00", function(event) {
+                </code>
+              </pre>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h2 class="sub-header">Contact form</h2>
+        <div class="bd">
+          <ol>
+            <li>Open <strong>php/contact.php</strong><br><br>
+              <pre><code>$to = 'myemail@mail.com';
+              </code></pre>
+            </li>
+            <li>Just replace "myemail@mail.com" by your mail</li>
+          </ol>
+        </div>
+        <h2 class="sub-header">Map</h2>
+        <div class="bd">
+          <ol>
+            <li>Open <strong>js/main.js</strong>
+            </li>
+            <li>Just replace <pre><code>var myLatlng = new google.maps.LatLng(<strong>47.8917439,106.831832</strong>);</pre></code> by your location</li>
+            <li>Just replace<pre><code>var contentString = '&lt;div class="info-content"&gt;&lt;h2&gt;We are here &lt;small&gt;Ulaanbaatar, Mongolia&lt;/small&gt;&lt;/h2&gt;&lt;p&gt;Located in the center of the city, lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum euismod erat, nec porta turpis fringilla sed.&lt;/p&gt;&lt;/div&gt;'</code></pre> by your location information</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section id="newsletter" class="grey">
+      <div class="container">
+        <h2 class="sub-header">Newsletter</h2>
+        <div class="bd">
+          <ul>
+              <li>Open the file "php/subscribe.php"</li>
+              <li>
+                <pre><code>
+                // MailChimp API Key findable in your Mailchimp's dashboard
+                $API_KEY =  "<strong>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</strong>";
+
+                // MailChimp List ID  findable in your Mailchimp's dashboard
+                $LIST_ID =  "<strong>XXXXXXXXXX</strong>";
+                </code></pre></li>
+              <li>Replace the "XXXXX" by your API key & the ID of your list</li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="credits">
+      <div class="container">
+        <h2 class="sub-header">Sources and Credits</h2>
+        <div class="bd">
+          <ol>
+            <li><p><a href="http://jquery.com">Jquery</a></p></li>
+            <li><p><a href="http://getbootstrap.com">Bootstrap</a></p></li>
+            <li><p><a href="http://github.hubspot.com/pace/docs/welcome/">Pace - Automatic page load progress bar</a></p></li>
+            <li><p><a href="http://manos.malihu.gr/jquery-custom-content-scroller/">jQuery custom content scroller</a></p></li>
+            <li><p><a href="http://fontawesome.io">Font awesome</a></p></li>
+            <li><p><a href="https://vegas.jaysalvat.com">Vegas background slideshow</a></p></li>
+            <li><p><a href="https://github.com/pupunzi/jquery.mb.YTPlayer">Youtube background</a></p></li>
+            <li><p><a href="http://fancybox.net">Fancybox</a></p></li>
+            <li><p><a href="http://itbruno.github.io/notifyme/">NotifyMe - Plugin for newsletter</a></p></li>
+          </ol>
+          <h3>Thank you!</h3>
+          <p>Once again, thank you so much for purchasing this theme. As noted at the beginning, we'd be glad to help you if you have any questions relating to this theme. No guarantees, but we'll do our best to assist.</p>
+          <a href="https://themeforest.net/user/themeplusplus" target="_blank" class="learn-more">Support Centre</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
