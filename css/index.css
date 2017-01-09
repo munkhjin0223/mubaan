@@ -250,6 +250,7 @@ p {
 }
 
 .remodal-wrapper {
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 0;
 }
 

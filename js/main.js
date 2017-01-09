@@ -83,17 +83,20 @@ $(document).ready(function() {
    */
 
   // Plugin for the slider background
-  $('#slider').vegas({
-    slides: [{
-      src: '../images/slider/img1.jpg'
-    }, {
-      src: '../images/slider/img2.jpg'
-    }, {
-      src: '../images/slider/img3.jpg'
-    }, {
-      src: '../images/slider/img4.jpg'
-    }]
-  });
+  var $slider = $("#slider");
+  if($slider.length > 0){
+    $slider.vegas({
+      slides: [{
+        src: '../images/slider/img1.jpg'
+      }, {
+        src: '../images/slider/img2.jpg'
+      }, {
+        src: '../images/slider/img3.jpg'
+      }, {
+        src: '../images/slider/img4.jpg'
+      }]
+    });
+  }
 
   /**
    * 4. Youtube Background
